@@ -34,7 +34,6 @@
     <p class="links">
       <a href="assets/LHM-Humanoid.pdf">Paper</a>
       <a href="assets/supplementary.pdf">Supplementary</a>
-      <a href="https://github.com/Haozhuo-Zhang/LHM-Humanoid">GitHub</a>
     </p>
   </header>
 
@@ -60,50 +59,65 @@
     </section>
 
     <section>
-      <h2>Supplementary videos</h2>
+      <h2>Videos</h2>
       <div class="videos">
         <figure>
-          <video controls preload="none" poster="posters/000.jpg" src="videos/000.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/000.jpg" src="videos/000.mp4"></video>
           <figcaption>Warehouse</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/001.jpg" src="videos/001.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/001.jpg" src="videos/001.mp4"></video>
           <figcaption>Warehouse</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/002.jpg" src="videos/002.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/002.jpg" src="videos/002.mp4"></video>
           <figcaption>Warehouse</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/003.jpg" src="videos/003.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/003.jpg" src="videos/003.mp4"></video>
           <figcaption>Living room</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/004.jpg" src="videos/004.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/004.jpg" src="videos/004.mp4"></video>
           <figcaption>Bedroom</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/005.jpg" src="videos/005.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/005.jpg" src="videos/005.mp4"></video>
           <figcaption>Living room</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/006.jpg" src="videos/006.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/006.jpg" src="videos/006.mp4"></video>
           <figcaption>Living room</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/007.jpg" src="videos/007.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/007.jpg" src="videos/007.mp4"></video>
           <figcaption>Bedroom</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/008.jpg" src="videos/008.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/008.jpg" src="videos/008.mp4"></video>
           <figcaption>Living room</figcaption>
         </figure>
         <figure>
-          <video controls preload="none" poster="posters/009.jpg" src="videos/009.mp4"></video>
+          <video autoplay muted loop playsinline preload="auto" poster="posters/009.jpg" src="videos/009.mp4"></video>
           <figcaption>Kitchen</figcaption>
         </figure>
       </div>
     </section>
+    <section>
+      <h2>Citation</h2>
+      <pre class="bibtex">@article{zhang2025lhm,
+  title={LHM-Humanoid: Long-Horizon Human Motion Control for Continuous Object Transport in Cluttered Scenes},
+  author={Zhang, Haozhuo and Sun, Jingkai and Caprio, Michele and Cangelosi, Angelo and Tang, Jian and Zhang, Shanghang and Zhang, Qiang and Pan, Wei},
+  journal={arXiv preprint arXiv:2508.16943},
+  year={2025}
+}</pre>
+    </section>
   </main>
+  <script>
+    document.querySelectorAll("video").forEach(function (video) {
+      video.muted = true;
+      video.play().catch(function () {});
+    });
+  </script>
 </body>
 </html>

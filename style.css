@@ -106,6 +106,18 @@ figcaption {
   color: #4e4740;
 }
 
+.bibtex {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e4dfd8;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
 @media (max-width: 720px) {
   h1 { font-size: 26px; }
   .videos { grid-template-columns: 1fr; }
