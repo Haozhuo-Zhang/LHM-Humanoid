@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LHM-Humanoid: Long-Horizon Human Motion Control for Continuous Object Transport in Cluttered Scenes</title>
+  <meta name="description" content="Project page for LHM-Humanoid, accepted at ACCV 2026. Continuous, reset-free long-horizon whole-body object transport in cluttered scenes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="venue">ACCV 2026</p>
+    <h1>LHM-Humanoid: Long-Horizon Human Motion Control for Continuous Object Transport in Cluttered Scenes</h1>
+    <p class="authors">
+      Haozhuo Zhang<sup>1</sup>,
+      Jingkai Sun<sup>2</sup>,
+      Michele Caprio<sup>3</sup>,
+      Angelo Cangelosi<sup>1</sup>,
+      Jian Tang<sup>4</sup>,
+      Shanghang Zhang<sup>5</sup>,
+      Qiang Zhang<sup>6,*</sup>,
+      Wei Pan<sup>7,*</sup>
+    </p>
+    <p class="affil">
+      <sup>1</sup>The University of Manchester
+      <sup>2</sup>The University of Hong Kong
+      <sup>3</sup>University of Warwick
+      <sup>4</sup>X-Humanoid
+      <sup>5</sup>Peking University
+      <sup>6</sup>University of Science and Technology of China
+      <sup>7</sup>Newcastle University
+      <br>*Corresponding authors
+    </p>
+    <p class="links">
+      <a href="assets/LHM-Humanoid.pdf">Paper</a>
+      <a href="assets/supplementary.pdf">Supplementary</a>
+      <a href="https://github.com/Haozhuo-Zhang/LHM-Humanoid">GitHub</a>
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <img class="hero" src="assets/teaser.png" alt="A simulated humanoid continuously transports objects through warehouse, living room, bedroom, and kitchen scenes.">
+    </section>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>Physics-based human motion control can make a simulated character walk, sit, and manipulate objects with high physical realism. Almost always, though, this happens in short, isolated clips that are re-initialized between interactions. We instead aim for continuous, reset-free long-horizon motion: a physically simulated humanoid that repeatedly walks to a displaced object, lifts it with a balanced whole-body posture, carries it past obstacles, and places it at a goal, over and over within a single uninterrupted take. The hard part is not any individual motion but the transitions between them. Without a reset, each cycle must end in a state that both leaves the object just placed undisturbed and lets the next cycle begin, yet every placement leaves the character off-balance in a non-canonical pose where naive end-to-end reinforcement learning fails. Our key idea is to treat this handoff as a two-sided problem of recoverability: the character must disengage from the object it just placed so the prior success is preserved, and settle into a state from which a balanced continuation exists. Instead of engineering a transition by hand, we learn to shape where each cycle ends so that it lands in this recoverable region. We introduce LHM-Humanoid. One goal-conditioned controller completes a fetch–carry–place cycle and, through a learned release-and-retreat behavior, steers its terminal state into this region; a second controller then takes over from the resulting state distribution. Both are regularized by an adversarial motion prior and distilled into a single goal-conditioned policy that runs the whole sequence as one reset-free rollout. Across 350 cluttered layouts spanning four room types, LHM-Humanoid produces far more successful and stable long-horizon motion than end-to-end RL, hierarchical RL, and prior physics-based human-scene-interaction methods, on both seen and unseen scenes. Trained only on two-object episodes, it extrapolates zero-shot to five-object sequences, where the baselines collapse to near-zero success. The resulting behavior can also be driven by egocentric vision and language.</p>
+    </section>
+
+    <section>
+      <h2>Method</h2>
+      <img src="assets/method.png" alt="Two teachers cover a continuous two-object episode, then DAgger distills them into one reset-free policy.">
+    </section>
+
+    <section>
+      <h2>Qualitative results</h2>
+      <img src="assets/qualitative.png" alt="Continuous rollouts in a warehouse, two living rooms, a bedroom, and a kitchen.">
+      <p class="caption">Each row is one uninterrupted episode. Top to bottom: warehouse, living room, bedroom, kitchen, living room.</p>
+    </section>
+
+    <section>
+      <h2>Supplementary videos</h2>
+      <div class="videos">
+        <figure>
+          <video controls preload="none" poster="posters/000.jpg" src="videos/000.mp4"></video>
+          <figcaption>Warehouse</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/001.jpg" src="videos/001.mp4"></video>
+          <figcaption>Warehouse</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/002.jpg" src="videos/002.mp4"></video>
+          <figcaption>Warehouse</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/003.jpg" src="videos/003.mp4"></video>
+          <figcaption>Living room</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/004.jpg" src="videos/004.mp4"></video>
+          <figcaption>Bedroom</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/005.jpg" src="videos/005.mp4"></video>
+          <figcaption>Living room</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/006.jpg" src="videos/006.mp4"></video>
+          <figcaption>Living room</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/007.jpg" src="videos/007.mp4"></video>
+          <figcaption>Bedroom</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/008.jpg" src="videos/008.mp4"></video>
+          <figcaption>Living room</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" poster="posters/009.jpg" src="videos/009.mp4"></video>
+          <figcaption>Kitchen</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
